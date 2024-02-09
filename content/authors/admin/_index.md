@@ -1,13 +1,13 @@
 ---
 # Display name
-title: 吳健雄
+title: 笵荢麒
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: Richie Fan
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Yuqi
+last_name: Fan
 
 # Status emoji
 status:
@@ -17,34 +17,35 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: Phd Candidate
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Stanford University
-    url: https://www.stanford.edu/
+  - name: Beijing Institute of Technology
+    url: https://english.bit.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include spacecraft atttiude planning, artificial intelligence and database system.
 
 # Interests to show in About widget
 interests:
+  - Spacecraft Atttiude Planning
+  - Motion\Task Planning
   - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Database System for Artificial Intelligence
 
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: PhD Candidate in Artificial Intelligence
+      institution: Beijing Institute of Technology
+      year: 2024
+    - course: MEng in Aerospace Engineering
+      institution: Beijing Institute of Technology
+      year: 2021
+    - course: BSc in Aerospace Engineering
+      institution: Beijing Institute of Technology
+      year: 2017
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -94,21 +95,13 @@ social:
   - icon: envelope
     icon_pack: fas
     link: '/#contact'
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
-    label: Follow me on Twitter
-    display:
-      header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://scholar.google.com/citations?user=6GbdPT4AAAAJ&hl=en
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
-  - icon: linkedin
-    icon_pack: fab
-    link: https://www.linkedin.com/
+    link: https://github.com/richie-live
+
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
@@ -120,5 +113,6 @@ social:
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+
+Yuqi Fan currently has a master's degree in aerospace and will start a PhD in August 2024. His research interests include spacecraft atttiude planning, artificial intelligence and database system.
 {style="text-align: justify;"}
