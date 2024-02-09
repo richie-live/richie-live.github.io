@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 笵荢麒
+title: 范宇麒
 
 # Name pronunciation (optional)
 name_pronunciation: Richie Fan
