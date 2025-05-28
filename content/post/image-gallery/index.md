@@ -3,6 +3,10 @@ title: 旅行图册
 description: 出游过程中拍摄的照片
 date: 2023-08-26 00:00:00+0000
 image: featured.png
+categories:
+    - 生活
+tags:
+    - 摄影
 ---
 
 

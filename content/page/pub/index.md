@@ -1,5 +1,5 @@
 ---
-title: Publication
+title: 发表
 menu:
     main: 
         weight: 4
