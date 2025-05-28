@@ -15,4 +15,11 @@ url = "https://github.com/richie-live"
 [social.params]
 icon = "brand-github"
 
+[[social]]
+identifier = "google_scholar"
+name = "Scholar"
+url = "https://scholar.google.com/citations?user=6GbdPT4AAAAJ&hl=en"
+
+[social.params]
+icon = "school"
 

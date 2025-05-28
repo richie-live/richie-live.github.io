@@ -19,7 +19,7 @@ subtitle = "生前生后，皆是永恒。"
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/avatar.png"
+src = "img/avatar.jpg"
 
 [article]
 headingAnchor = false

@@ -1,15 +1,10 @@
 ---
 title: About
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 menu:
     main: 
-        weight: 4
+        weight: 5
         params:
-            icon: link
+            icon: user
 
 comments: false
 ---
@@ -23,14 +18,15 @@ Yuqi Fan is currently pursuing a Ph.D. degree from 2024 to 2028. His research in
 - Spacecraft Atttiude Planning
 
 ## Education:
-- Course: Phd in Autonomous Driving Traffic
+### Phd in Autonomous Driving Traffic
 - Institution: Beihang University
 - Year: 2024-2028
 
-- Course: MEng in Aerospace Engineering
+
+### MEng in Aerospace Engineering
 - Institution: Beijing Institute of Technology
 - Year: 2021-2024
 
-- Course: BSc in Aerospace Engineering
+### BSc in Aerospace Engineering
 - Institution: Beijing Institute of Technology
 - Year: 2017-2021
