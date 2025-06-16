@@ -104,5 +104,189 @@ newgrp docker
 去dockerhub搜索
 [Docker Hub Container Image Library \| App Containerization](https://hub.docker.com/)
 
-找到想要的镜像之后进行docker pull，可以直接copy code运行
+找到想要的镜像之后进行docker pull，可以直接copy code运行，举个例子
+```sh
+docker pull nginx:stable-perl
+```
+
+## 运行镜像
+```sh
+docker run --gpus all -itd \
+-p 30000:30000 \
+-p 5006:5006 \
+-v /home/fyq/SAH-Drive:/root/SAH-Drive \
+-v /home/fyq/nuplan:/root/nuplan \
+--name nuplan_docker \
+--env http_proxy="http://172.18.0.1:7897/" \
+--env https_proxy="http://172.18.0.1:7897/" \
+--env NO_PROXY="localhost,127.0.0.1,.example.com" \
+sah_nuplan_image:latest /bin/bash 
+```
+
+- --gpus all：将所有 GPU 暴露给容器。也可以指定 GPU 数量或 ID，比如 --gpus '"device=0,1"'
+- -it：交互模式，进入容器
+- -d 让容器在后台运行，保持容器常开
+- nvidia/cuda:12.4.1-runtime-ubuntu22.04：你的镜像名称，比如 my-gpu-image
+- /bin/bash：进入容器 shell（可按需修改为运行的脚本或命令）
+- --name: 给容器起的名字
+
+开启容器代理
+```sh
+--env HTTP_PROXY="http://172.18.0.1:7897/"\
+--env HTTPS_PROXY="http://172.18.0.1:7897/"\
+--env http_proxy="http://172.18.0.1:7897/"\
+--env https_proxy="http://172.18.0.1:7897/"\
+--env NO_PROXY="localhost,127.0.0.1,.example.com"\
+```
+
+查看docker网卡地址，运行`ifconfig`
+假设得到docker0地址为：172.18.0.1
+
+注意，运行容器的终端需要开启http代理
+
+
+容器内取消代理
+export 
+
+
+## 退出 进入 容器
+
+---
+
+### 1. 退出容器
+
+* 如果你在容器内部使用 `bash` 或其他 shell，想要退出容器，可以使用以下命令：
+
+  ```bash
+  exit
+  ```
+
+  这会让你退出当前的容器 shell 会话，容器仍然在后台运行（如果是交互模式且没有显式停止容器）。
+
+  或者，如果你只是想暂时返回主机的命令行，也可以按 `Ctrl + P`，然后 `Ctrl + Q`，这样容器会在后台继续运行，而你会返回到主机的命令行。
+
+---
+
+### 2. 查看正在运行的容器
+
+如果你退出了容器，但想再次进入容器，首先需要确认容器是否在运行。可以使用以下命令查看当前正在运行的容器：
+
+```bash
+docker ps
+```
+
+这将显示所有正在运行的容器，包括容器 ID 和名称等信息。
+
+```bash 
+docker ps -a
+```
+
+这将显示所有的容器，包括没有运行的。
+---
+
+### 3. 再次进入容器
+
+你可以通过容器 ID 或名称再次进入容器。使用以下命令：
+
+```bash
+docker exec -it <container_id_or_name> /bin/bash
+```
+
+
+如果你希望进入容器的其他 shell（比如 `sh`），可以使用：
+
+```bash
+docker exec -it <container_id_or_name> /bin/sh
+```
+
+---
+
+### 4. 进入已停止的容器
+
+如果容器已经停止，你可以先重新启动容器，然后再进入容器：
+
+```bash
+docker start <container_id_or_name>
+```
+
+然后再次使用 `docker exec` 进入容器：
+
+```bash
+docker exec -it <container_id_or_name> /bin/bash
+```
+
+---
+
+
+
+docker清除构建缓存
+```sh
+docker builder prune
+```
+
+清理未使用的镜像、容器、卷和网络
+docker system prune
+
+这条命令会删除：
+
+未运行的容器（停止的容器）
+悬挂镜像（没有标签的镜像）
+未使用的网络
+未使用的卷（可以加 --volumes 参数来删除未使用的卷）
+
+
+
+nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
+
+装miniconda
+
+创建nuplan环境
+
+安装基础的编译工具pandas需要
+
+
+
+
+docker导致的文件夹权限问题
+容器中创建的文件或文件夹的属主是 root 用户，导致主机用户（如 fyq）没有权限修改或删除。
+
+
+
+### ✅ **方法一：让容器中的进程使用你的主机用户（推荐）**
+
+运行容器时指定 UID 和 GID：
+
+```bash
+docker run -u $(id -u):$(id -g) ...
+```
+
+这样，容器内创建的文件就会属于你当前的主机用户（比如 `fyq`），避免了 root 文件的问题。
+
+**示例**：
+
+```bash
+docker run -u $(id -u):$(id -g) -v /home/fyq/data:/data my_image
+```
+
+> 💡 这适用于构建和开发类容器场景。部分需要 root 权限的服务（如 systemd、部分数据库）不适用。
+
+---
+
+### 🛠️ **方法二：容器内创建文件夹后，手动更改属主（一次性解决）**
+
+假设容器运行后你发现主机文件夹 `/home/fyq/nuplan/exp/...` 是 root 拥有的。
+
+你可以在主机上运行以下命令将属主改回自己：
+
+```bash
+sudo chown -R fyq:fyq /home/fyq/nuplan/exp
+```
+
+如果是具体某个文件夹：
+
+```bash
+sudo chown -R fyq:fyq /home/fyq/nuplan/exp/sim_DE_PDM_vis/
+```
+
+---
 
