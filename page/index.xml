@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Ghost in the Shell</title><link>https://richie-live.github.io/page/</link><description>Recent content in Pages on Ghost in the Shell</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://richie-live.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>归档</title><link>https://richie-live.github.io/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/archives/</guid><description/></item><item><title>发表</title><link>https://richie-live.github.io/%E5%8F%91%E8%A1%A8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/%E5%8F%91%E8%A1%A8/</guid><description>&lt;h2 id="博士期间研究成果">博士期间研究成果
+&lt;/h2>&lt;p>[1] Fan Y, Cui Z*, et al. (2025) SAH-Drive: A Scenario-Aware Hybrid Planner for Closed-Loop Vehicle Trajectory Generation. International Conference on Machine Learning (ICML)&lt;/p>
+&lt;h2 id="硕士期间研究成果">硕士期间研究成果
+&lt;/h2>&lt;h3 id="文章">文章
+&lt;/h3>&lt;p>[1] Fan Y, Xu R, Li Z, Zhu S, et al. Polynomial Attitude Trajectory Planning for Spacecraft with Movable Parts Using Decoupled Strategy[J]. Journal of Guidance, Control, and Dynamics, 2024, 47(1): 72-86. (SCI, WOS: 001101619800001).&lt;br>
+[2] Xu R, Fan Y, Li Z, Zhu S, et al. Time-optimal attitude planning for spacecraft with movable parts using second order cone programming[J]. Aerospace Science and Technology, 2023, 141: 108589. (SCI, WOS: 001077328900001).&lt;br>
+[3] Fan Y, Xu R, Yu D, Li Z, et al. Energy-optimized Attitude Planning for Spacecraft with Movable Parts Using Auxiliary Rotation[J]. Journal of Guidance, Control, and Dynamics, (SCI, 在审).&lt;br>
+[4] 徐瑞, 朱哲, 李朝玉, 范宇麒, 等. 航天器姿态机动规划技术研究进展[J]. 宇航学报, 2023, 44(2): 155-167. (EI, Accession number: 20233214494667).&lt;br>
+[5] 范宇麒, 徐瑞, 李朝玉, 朱圣英, 等. 一种引力波探测卫星动态姿态规划方法[J]. 航天控制, 2022, 40(4): 18-25. (北大核心).&lt;/p>
+&lt;h3 id="会议">会议
+&lt;/h3>&lt;p>[1] 范宇麒, 徐瑞, 高艾. 引力波探测中的微尺度姿态规划方法研究[C]. 中国宇航学会深空探测技术 专业委员会第十八届学术年会. 海口, 2021.&lt;br>
+[2] 范宇麒, 徐瑞, 李朝玉, 朱圣英, 等. 深空引力波探测器激光链路构建自主姿态规划方法[C]. 中国 宇航学会深空探测技术专业委员会第十九届学术年会. 呼和浩特, 2023.&lt;br>
+[3] 范宇麒, 徐瑞, 李朝玉, 朱圣英, 等. 火星大气环境安全飞行自主规划研究[C]. 第二十五届中国科 协年会——深空探测高端研讨会. 合肥, 2023.&lt;/p>
+&lt;h3 id="专利">专利
+&lt;/h3>&lt;p>[1] 徐瑞, 范宇麒, 李朝玉. 分段多项式航天器姿态机动轨迹规划方法: [P]. 100081 北京市海淀区中 关村南大街 5 号. 2022, 202210811671.0. (已受理).&lt;/p></description></item><item><title>关于</title><link>https://richie-live.github.io/%E5%85%B3%E4%BA%8E/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/%E5%85%B3%E4%BA%8E/</guid><description>&lt;h2 id="-about-me--关于我">🧑‍🚀 About Me / 关于我
+&lt;/h2>&lt;p>Hello! I’m &lt;strong>Yuqi Fan (范宇麒)&lt;/strong>, a Ph.D. student at &lt;strong>Beihang University&lt;/strong>, working on trajectory planning and decision-making in &lt;strong>autonomous driving systems&lt;/strong>. My research focuses on integrating &lt;strong>task/motion planning&lt;/strong> with &lt;strong>large language models (LLMs)&lt;/strong> to improve the adaptability and intelligence of autonomous agents in dynamic environments.&lt;/p>
+&lt;p>Before diving into the world of intelligent vehicles, I majored in &lt;strong>Aerospace Engineering&lt;/strong>, where I developed a strong foundation in modeling, control, and &lt;strong>spacecraft attitude planning&lt;/strong>. This background still influences the way I design robust and reliable planning systems today.&lt;/p>
+&lt;p>你好，我是&lt;strong>范宇麒&lt;/strong>，目前在&lt;strong>北京航空航天大学&lt;/strong>攻读博士学位，研究方向为&lt;strong>自动驾驶中的轨迹规划与决策&lt;/strong>。我致力于将&lt;strong>任务/运动规划算法&lt;/strong>与&lt;strong>大语言模型&lt;/strong>结合，用于提升自主体在复杂环境中的理解力与规划能力。&lt;/p>
+&lt;p>我本科和硕士阶段就读于&lt;strong>北京理工大学宇航学院&lt;/strong>，主要研究方向为&lt;strong>航天器姿态规划&lt;/strong>，这段经历为我后续面向地面智能系统的研究打下了坚实的理论基础。&lt;/p>
+&lt;h2 id="-research-philosophy--研究理念">🧠 Research Philosophy / 研究理念
+&lt;/h2>&lt;p>I believe that planning is at the heart of intelligence. Whether in autonomous driving or spacecraft control, intelligent systems need to reason beyond perception—&lt;strong>to plan, adapt, and generalize&lt;/strong>. My work explores how symbolic planning and LLM-based reasoning can be embedded in real-time decision systems.&lt;/p>
+&lt;p>我认为**“规划能力”是智能系统的核心能力**。无论是在轨道上运行的航天器，还是穿行于城市道路的自动驾驶车辆，真正可靠的自主系统应具备超越感知的任务理解与动态决策能力。我的研究正是面向这一目标，在&lt;strong>知识建模与神经推理之间寻找融合之道&lt;/strong>。&lt;/p>
+&lt;h2 id="-research-interests">✨ Research Interests
+&lt;/h2>&lt;ul>
+&lt;li>自动驾驶轨迹规划 / Trajectory Planning&lt;/li>
+&lt;li>多任务/运动规划 / Task &amp;amp; Motion Planning&lt;/li>
+&lt;li>大语言模型与决策 / LLM-based Decision Systems&lt;/li>
+&lt;li>航天器姿态规划 / Spacecraft Attitude Planning&lt;/li>
+&lt;/ul>
+&lt;h2 id="-education">🎓 Education
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Ph.D. in Autonomous Driving and Traffic Intelligence&lt;/strong>
+Beihang University, 2024 – 2028&lt;/li>
+&lt;li>&lt;strong>M.Eng. in Aerospace Engineering&lt;/strong>
+Beijing Institute of Technology, 2021 – 2024&lt;/li>
+&lt;li>&lt;strong>B.Sc. in Aerospace Engineering&lt;/strong>
+Beijing Institute of Technology, 2017 – 2021&lt;/li>
+&lt;/ul>
+&lt;h2 id="-outside-of-research--研究之外">🌱 Outside of Research / 研究之外
+&lt;/h2>&lt;p>I enjoy thinking about future intelligence—from embodied AI to planetary systems.
+Outside of academia, I enjoy running and am beginning to learn photography. I plan to document what I see through the lens and share selected photos on this website as part of my creative exploration.&lt;/p>
+&lt;p>我平时喜欢思考智能的未来形态——从具身智能到星际系统。
+在科研之外，我热爱跑步，并即将开始学习摄影。我希望通过镜头记录生活中的片段，并将在本网站上分享我的摄影作品，作为个人探索世界的一种方式。&lt;/p>
+&lt;h2 id="-get-in-touch--联系方式">📫 Get in Touch / 联系方式
+&lt;/h2>&lt;ul>
+&lt;li>📮 Email: &lt;a class="link" href="richiefan@foxmail.com" >richiefan@foxmail.com&lt;/a>&lt;/li>
+&lt;li>🧑‍💻 GitHub: &lt;a class="link" href="https://github.com/richie-live" target="_blank" rel="noopener"
+>https://github.com/richie-live&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>搜索</title><link>https://richie-live.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/search/</guid><description/></item></channel></rss>
