@@ -43,6 +43,9 @@ sudo systemctl restart docker
 
 
 ### 配置代理
+
+#### 方法一
+
 ```sh
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
@@ -62,6 +65,40 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
+#### 方法二
+
+配置全局代理
+```bash
+sudo vim ~/.docker/config.json
+```
+
+配置 HTTP 和 HTTPS 代理：
+```
+{
+ "proxies": {
+   "default": {
+     "httpProxy": "http://proxy.example.com:3128",
+     "httpsProxy": "https://proxy.example.com:3129",
+     "noProxy": "*.test.example.com,.example.org,127.0.0.0/8"
+   }
+ }
+}
+```
+
+开启容器代理
+```sh
+--env HTTP_PROXY="http://172.18.0.1:7897/"\
+--env HTTPS_PROXY="http://172.18.0.1:7897/"\
+--env http_proxy="http://172.18.0.1:7897/"\
+--env https_proxy="http://172.18.0.1:7897/"\
+--env NO_PROXY="localhost,127.0.0.1,.example.com"\
+```
+
+查看docker网卡地址，运行`ifconfig`
+假设得到docker0地址为：172.18.0.1
+
+`http://proxy.example.com` 填172.18.0.1
+
 ## 安装 NVIDIA Container Toolkit
 
 [Installing the NVIDIA Container Toolkit — NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
@@ -77,26 +114,6 @@ sudo systemctl restart docker
 ```
 
 
-## 配置Docker用户组
-
-[【Docker】报错：Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock - 06 - 博客园](https://www.cnblogs.com/allay/p/17544758.html#:~:text=%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90%EF%BC%9A%E8%BF%99%E6%98%AF%E5%9B%A0%E4%B8%BA%E4%BD%A0%E5%BD%93%E5%89%8D%E7%9A%84%E7%94%A8%E6%88%B7%E6%B2%A1%E6%9C%89%E8%BF%99%E4%B8%AA%E6%9D%83%E9%99%90%E3%80%82%20%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8Cdocker%20%E5%91%BD%E4%BB%A4%E4%BC%9A%E4%BD%BF%E7%94%A8%20Unix%20socket%20%E4%B8%8E%20Docker%20%E5%BC%95%E6%93%8E%E9%80%9A%E8%AE%AF%E3%80%82,Unix%20socket%E3%80%82%20%E5%87%BA%E4%BA%8E%E5%AE%89%E5%85%A8%E8%80%83%E8%99%91%EF%BC%8C%E4%B8%80%E8%88%AC%20Linux%20%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%B8%8D%E4%BC%9A%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%20root%20%E7%94%A8%E6%88%B7%E3%80%82%20%E5%8D%B3%E6%88%91%E4%BB%AC%E5%BD%93%E5%89%8D%E7%9A%84%E7%94%A8%E6%88%B7%E4%B8%8D%E6%98%AFroot%E7%94%A8%E6%88%B7%E3%80%82)
-
-默认情况下，docker 命令会使用 Unix socket 与 Docker 引擎通讯。而只有 root 用户和 docker 组的用户才可以访问 Docker 引擎的 Unix socket。出于安全考虑，一般 Linux 系统上不会直接使用 root 用户。即我们当前的用户不是root用户。
-
-docker守护进程启动的时候，会默认赋予名字为docker的用户组读写Unix socket的权限，因此只要创建docker用户组，并将当前用户加入到docker用户组中，那么当前用户就有权限访问Unix socket了，进而也就可以执行docker相关命令
-
-```sh
-#添加docker用户组（一般此步可省略，docker会自动创建，） 
-sudo groupadd docker 
-
-#将用户加入到docker用户组，$USER为用户名。 
-sudo gpasswd -a $USER docker 
-
-#更新用户组
-newgrp docker
-```
-
-重启电脑
 
 
 ## 下载镜像
@@ -116,7 +133,8 @@ docker run --gpus all -itd \
 -p 5006:5006 \
 -v /home/fyq/SAH-Drive:/root/SAH-Drive \
 -v /home/fyq/nuplan:/root/nuplan \
---name nuplan_docker \
+-v /home/fyq/interplan_workspace:/root/interplan_workspace \
+--name nuplan_docker1 \
 --env http_proxy="http://172.18.0.1:7897/" \
 --env https_proxy="http://172.18.0.1:7897/" \
 --env NO_PROXY="localhost,127.0.0.1,.example.com" \
@@ -129,29 +147,17 @@ sah_nuplan_image:latest /bin/bash
 - nvidia/cuda:12.4.1-runtime-ubuntu22.04：你的镜像名称，比如 my-gpu-image
 - /bin/bash：进入容器 shell（可按需修改为运行的脚本或命令）
 - --name: 给容器起的名字
+- --env 环境变量
 
-开启容器代理
-```sh
---env HTTP_PROXY="http://172.18.0.1:7897/"\
---env HTTPS_PROXY="http://172.18.0.1:7897/"\
---env http_proxy="http://172.18.0.1:7897/"\
---env https_proxy="http://172.18.0.1:7897/"\
---env NO_PROXY="localhost,127.0.0.1,.example.com"\
-```
 
-查看docker网卡地址，运行`ifconfig`
-假设得到docker0地址为：172.18.0.1
 
 注意，运行容器的终端需要开启http代理
 
 
-容器内取消代理
-export 
 
 
 ## 退出 进入 容器
 
----
 
 ### 1. 退出容器
 
@@ -165,7 +171,6 @@ export
 
   或者，如果你只是想暂时返回主机的命令行，也可以按 `Ctrl + P`，然后 `Ctrl + Q`，这样容器会在后台继续运行，而你会返回到主机的命令行。
 
----
 
 ### 2. 查看正在运行的容器
 
@@ -182,7 +187,6 @@ docker ps -a
 ```
 
 这将显示所有的容器，包括没有运行的。
----
 
 ### 3. 再次进入容器
 
@@ -192,14 +196,6 @@ docker ps -a
 docker exec -it <container_id_or_name> /bin/bash
 ```
 
-
-如果你希望进入容器的其他 shell（比如 `sh`），可以使用：
-
-```bash
-docker exec -it <container_id_or_name> /bin/sh
-```
-
----
 
 ### 4. 进入已停止的容器
 
@@ -215,9 +211,8 @@ docker start <container_id_or_name>
 docker exec -it <container_id_or_name> /bin/bash
 ```
 
----
 
-
+## 缓存清理
 
 docker清除构建缓存
 ```sh
@@ -228,51 +223,15 @@ docker builder prune
 docker system prune
 
 这条命令会删除：
-
-未运行的容器（停止的容器）
-悬挂镜像（没有标签的镜像）
-未使用的网络
-未使用的卷（可以加 --volumes 参数来删除未使用的卷）
-
-
-
-nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
-
-装miniconda
-
-创建nuplan环境
-
-安装基础的编译工具pandas需要
-
+- 未运行的容器（停止的容器）
+- 悬挂镜像（没有标签的镜像）
+- 未使用的网络
+- 未使用的卷（可以加 --volumes 参数来删除未使用的卷）
 
 
 
 docker导致的文件夹权限问题
-容器中创建的文件或文件夹的属主是 root 用户，导致主机用户（如 fyq）没有权限修改或删除。
-
-
-
-### ✅ **方法一：让容器中的进程使用你的主机用户（推荐）**
-
-运行容器时指定 UID 和 GID：
-
-```bash
-docker run -u $(id -u):$(id -g) ...
-```
-
-这样，容器内创建的文件就会属于你当前的主机用户（比如 `fyq`），避免了 root 文件的问题。
-
-**示例**：
-
-```bash
-docker run -u $(id -u):$(id -g) -v /home/fyq/data:/data my_image
-```
-
-> 💡 这适用于构建和开发类容器场景。部分需要 root 权限的服务（如 systemd、部分数据库）不适用。
-
----
-
-### 🛠️ **方法二：容器内创建文件夹后，手动更改属主（一次性解决）**
+容器中创建的文件或文件夹的属主是 root 用户，可能导致主机用户（如 fyq）没有权限修改或删除。
 
 假设容器运行后你发现主机文件夹 `/home/fyq/nuplan/exp/...` 是 root 拥有的。
 
@@ -282,11 +241,87 @@ docker run -u $(id -u):$(id -g) -v /home/fyq/data:/data my_image
 sudo chown -R fyq:fyq /home/fyq/nuplan/exp
 ```
 
-如果是具体某个文件夹：
-
+## 拷贝文件进入容器
 ```bash
-sudo chown -R fyq:fyq /home/fyq/nuplan/exp/sim_DE_PDM_vis/
+docker cp path/host path/container
 ```
 
----
+`docker cp` 有一个已知限制：它不能递归地覆盖已有的目录结构中的单个文件，尤其是容器内目标路径已经存在且非空的情况下。
+只能先删除容器内的目标目录，再copy。
 
+
+## dockerfile常用命令
+
+
+### 1. `FROM`：指定基础镜像（必须的第一行）
+
+```dockerfile
+FROM ubuntu:20.04
+```
+
+### 2. `RUN`：在镜像中执行命令（用于安装软件等）
+
+```dockerfile
+RUN apt-get update && apt-get install -y python3
+```
+
+### 3. `COPY`：将本地文件/目录复制到镜像中
+
+```dockerfile
+COPY ./app /usr/src/app
+```
+
+### 4. `ADD`：类似 `COPY`，但支持自动解压 `.tar` 文件及远程下载
+
+```dockerfile
+ADD https://example.com/file.tar.gz /tmp/
+```
+
+### 5. `WORKDIR`：设置工作目录（后续命令会在此目录下执行）
+
+```dockerfile
+WORKDIR /usr/src/app
+```
+
+### 6. `CMD`：指定容器启动时默认执行的命令（只生效一次）
+
+```dockerfile
+CMD ["python3", "main.py"]
+```
+
+### 7. `ENTRYPOINT`：指定容器启动命令（常用于将容器当作命令运行）
+
+```dockerfile
+ENTRYPOINT ["python3", "main.py"]
+```
+
+### 8. `ENV`：设置环境变量
+
+```dockerfile
+ENV PATH="/opt/conda/bin:$PATH"
+ENV LANG C.UTF-8
+```
+
+### 9. `EXPOSE`：声明容器监听的端口（不自动映射）
+
+```dockerfile
+EXPOSE 8080
+```
+
+### 10. `VOLUME`：声明挂载点（用于持久化数据）
+
+```dockerfile
+VOLUME ["/data"]
+```
+
+### 11. `ARG`：构建时传参（与 `ENV` 区别是生命周期）
+
+```dockerfile
+ARG VERSION=1.0
+RUN echo "Version is $VERSION"
+```
+
+从dockerfile构建容器
+```bash
+docker build -t your-image-name .
+```
