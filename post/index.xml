@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ghost in the Shell</title><link>https://richie-live.github.io/post/</link><description>Recent content in Posts on Ghost in the Shell</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 03 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://richie-live.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>SAH-Drive: A Scenario-Aware Hybrid Planner for Closed-Loop Vehicle Trajectory Generation</title><link>https://richie-live.github.io/p/sah-drive-a-scenario-aware-hybrid-planner-for-closed-loop-vehicle-trajectory-generation/</link><pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/sah-drive-a-scenario-aware-hybrid-planner-for-closed-loop-vehicle-trajectory-generation/</guid><description>&lt;img src="https://richie-live.github.io/p/sah-drive-a-scenario-aware-hybrid-planner-for-closed-loop-vehicle-trajectory-generation/featured.png" alt="Featured image of post SAH-Drive: A Scenario-Aware Hybrid Planner for Closed-Loop Vehicle Trajectory Generation" />&lt;p>ICML 2025&lt;/p>
+&lt;p>Abstract: Reliable planning is crucial for achieving autonomous driving. Rule-based planners are efficient but lack generalization, while learning-based planners excel in generalization yet have limitations in real-time performance and interpretability. In long-tail scenarios, these challenges make planning particularly difficult. To leverage the strengths of both rule-based and learning-based planners, we proposed the Scenario-Aware Hybrid Planner (SAH-Drive) for closed-loop vehicle trajectory planning. Inspired by human driving behavior, SAH-Drive combines a lightweight rule-based planner and a comprehensive learningbased planner, utilizing a dual-timescale decision neuron to determine the final trajectory. To enhance the computational efficiency and robustness of the hybrid planner, we also employed a diffusion proposal number regulator and a trajectory fusion module. The experimental results show that the proposed method significantly improves the generalization capability of the planning system, achieving state-of-the-art performance in interPlan, while maintaining computational efficiency without incurring substantial additional runtime.&lt;/p></description></item><item><title>批判性思维</title><link>https://richie-live.github.io/p/%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4/</link><pubDate>Mon, 30 Jun 2025 21:16:12 +0800</pubDate><guid>https://richie-live.github.io/p/%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4/</guid><description>&lt;p>好久没有写博客了，感觉这是一个前期需要坚持的习惯，其实也花不了多少时间，反而能加倍巩固学习到的知识。虽然门槛还是有，开始也会觉得效率很低，但只要习惯了，以后总结文章，发布，这一套流程会走的越来越熟悉，就不会那么消耗精力，只是顺手的事情。也就是说克服了前期的困难，好处是大大的有。&lt;/p>
+&lt;p>今天新读了一本书：学会思考。主要讲的是批判性思维，有四个关键步骤：&lt;/p>
+&lt;ul>
+&lt;li>是什么&lt;/li>
+&lt;li>怎们样：这件事会带来什么影响&lt;/li>
+&lt;li>为什么：如果是证明影响，为什么；如果是负面影响，为什么&lt;/li>
+&lt;li>怎么做&lt;/li>
+&lt;/ul>
+&lt;p>我个人的理解是，这是一种积极思维的思考习惯，最终让人专注于思考怎么做，有利于求同存异，有利于冲突消除和最后达到和谐的目标以及个体和群体的共同进步。总的来说，这是一个很好的思想，我在今天和家人的通话中实践了这个思想，有的时候不要那么着急，不让内心的本能操控自己，去沟通，确实能够和平的传达本意和思想。&lt;/p></description></item><item><title>Ubantu加装固态硬盘教程</title><link>https://richie-live.github.io/p/ubantu%E5%8A%A0%E8%A3%85%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/ubantu%E5%8A%A0%E8%A3%85%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98%E6%95%99%E7%A8%8B/</guid><description>&lt;p>由于需要下载一个大数据集，本来电脑的1T固态不够用了，需要加装固态硬盘。我购买了一个4T的固态硬盘，主机装上之后还有一系列格式化和挂载的操作，也是有点麻烦，在此记录一下，主要有以下几个步骤：&lt;/p>
+&lt;h3 id="对硬盘进行分区并格式化">对硬盘进行分区并格式化
+&lt;/h3>&lt;p>运行终端命令&lt;code>df -h&lt;/code>，查看现有硬盘分区及挂载状态，发现没有新增的固态硬盘。&lt;/p>
+&lt;p>所有安装的硬盘状态：&lt;code>sudo fdisk -l&lt;/code>&lt;/p>
+&lt;p>找到新增但还没有挂载的固态硬盘，以/dev/nvme01为例，进入并进行分区&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo fdisk /dev/nvme01
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">n &lt;span class="c1"># 创建分区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">p &lt;span class="c1"># 创建主分区&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="m">1&lt;/span> &lt;span class="c1"># 分区编号，接下来会有两个回车&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">w &lt;span class="c1"># 保存&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>基本就是按照默认的来就行了，最后w保存硬盘修改&lt;/p>
+&lt;p>再次&lt;code>sudo fdisk -l&lt;/code>，找到硬盘下的新分区，又称为设备（device boot），以/dev/nvme01p1为例子&lt;/p>
+&lt;p>格式化该分区：&lt;code>mkfs -t ext4 -c /dev/sdb1&lt;/code>&lt;/p>
+&lt;p>-t 制定要把磁盘格式化成什么类型&lt;/p>
+&lt;p>-c 在建立文件系统之前检查环道，要等一段时间，新硬盘一般不需要&lt;/p>
+&lt;h3 id="挂载">挂载
+&lt;/h3>&lt;p>创建挂载点并进行挂载&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mkdir /ssd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount /dev/nvme01p1 /ssd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>设置开机自动挂载，查看硬盘的UUID&lt;/p>
+&lt;p>&lt;code>sudo blkid /dev/nvme01p1&lt;/code>&lt;/p>
+&lt;p>&lt;code>code /etc/fstab&lt;/code>&lt;/p>
+&lt;p>在文件最后添加 &lt;code>UUID=abcd-1234 /ssd ext4 defaults 0 0 &lt;/code>&lt;/p>
+&lt;p>测试是否能正常挂载：&lt;code>sudo mount -a&lt;/code> 无报错说明添加成功。&lt;/p>
+&lt;p>&lt;code>/etc/fstab&lt;/code> 文件结构&lt;/p>
+&lt;p>每一行的格式是：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;设备名或UUID&amp;gt; &amp;lt;挂载点&amp;gt; &amp;lt;文件系统类型&amp;gt; &amp;lt;挂载选项&amp;gt; &amp;lt;dump&amp;gt; &amp;lt;fsck&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&lt;strong>第1列&lt;/strong>：磁盘分区，通常用 &lt;code>UUID=...&lt;/code> 以保证设备插拔或路径变化后仍能识别&lt;/li>
+&lt;li>&lt;strong>第2列&lt;/strong>：挂载点，比如 &lt;code>/&lt;/code>（根目录）或 &lt;code>/boot/efi&lt;/code>&lt;/li>
+&lt;li>&lt;strong>第3列&lt;/strong>：文件系统类型，如 &lt;code>ext4&lt;/code>、&lt;code>vfat&lt;/code>、&lt;code>swap&lt;/code>&lt;/li>
+&lt;li>&lt;strong>第4列&lt;/strong>：挂载选项，如 &lt;code>defaults&lt;/code>、&lt;code>errors=remount-ro&lt;/code>&lt;/li>
+&lt;li>&lt;strong>第5列 dump&lt;/strong>：通常是 &lt;code>0&lt;/code>（表示不需要做备份）&lt;/li>
+&lt;li>&lt;strong>第6列 fsck顺序&lt;/strong>：&lt;code>1&lt;/code> 表示首先检查（通常是根分区），&lt;code>2&lt;/code> 表示之后检查，&lt;code>0&lt;/code> 表示不检查&lt;/li>
+&lt;/ul></description></item><item><title>Ubantu22.04部署Docker教程</title><link>https://richie-live.github.io/p/ubantu22.04%E9%83%A8%E7%BD%B2docker%E6%95%99%E7%A8%8B/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/ubantu22.04%E9%83%A8%E7%BD%B2docker%E6%95%99%E7%A8%8B/</guid><description>&lt;h2 id="安装docker-engine不要安装docker-desktop">安装docker engine，不要安装docker desktop
+&lt;/h2>&lt;ul>
+&lt;li>Docker Desktop 是针对 Windows 和 Mac 用户设计的应用，它包含了 Docker 引擎（Docker Engine）和 Docker CLI 工具。对于这些操作系统，Docker Desktop 会启用一个虚拟机（通过 Hyper-V 或 WSL 2）来运行容器，而不是像 Linux 系统那样直接在宿主机上运行 Docker 服务。&lt;/li>
+&lt;li>在 Linux 系统 上，你需要使用 Docker Engine，而不是 Docker Desktop。&lt;/li>
+&lt;li>此外网上大多数教程都是针对Docker Engine的。&lt;/li>
+&lt;/ul>
+&lt;h2 id="ubantu安装教程">Ubantu安装教程
+&lt;/h2>&lt;p>&lt;a class="link" href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener"
+>Ubuntu | Docker Docs&lt;/a>&lt;/p>
+&lt;p>直接运行&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir -p /etc/docker
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo tee /etc/docker/daemon.json &lt;span class="s">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">{
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;registry-mirrors&amp;#34;: [
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;https://docker.xuanyuan.me&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="docker加速">Docker加速
+&lt;/h2>&lt;h3 id="镜像">镜像
+&lt;/h3>&lt;p>&lt;a class="link" href="https://zhuanlan.zhihu.com/p/24461370776" target="_blank" rel="noopener"
+>2025 Docker/DockerHub 国内镜像源/加速列表&lt;/a>
+&lt;a class="link" href="https://www.cnblogs.com/zhangwencheng/p/18909645" target="_blank" rel="noopener"
+>Docker 国内镜像加速地址-长期更新(2025-06) - 讲文张字 - 博客园&lt;/a>&lt;/p>
+&lt;p>这些镜像通常只能pull不能search，要search直接去dockerhub网站，要在终端可以用下面的方法：配置代理&lt;/p>
+&lt;h3 id="配置代理">配置代理
+&lt;/h3>&lt;h4 id="方法一">方法一
+&lt;/h4>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir -p /etc/systemd/system/docker.service.d
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>添加以下内容并保存，端口号&lt;code>7890&lt;/code>根据电脑实际情况修改&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[Service]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Environment=&amp;#34;HTTP_PROXY=http://127.0.0.1:7890/&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Environment=&amp;#34;HTTPS_PROXY=http://127.0.0.1:7890/&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Environment=&amp;#34;NO_PROXY=192.168.*,172.31.*,172.30.*,172.29.*,172.28.*,172.27.*,172.26.*,172.25.*,172.24.*,172.23.*,172.22.*,172.21.*,172.20.*,172.19.*,172.18.*,172.17.*,172.16.*,10.*,127.*,localhost&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重新加载 systemd 并重启 Docker&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="方法二">方法二
+&lt;/h4>&lt;p>配置全局代理&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo vim ~/.docker/config.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>配置 HTTP 和 HTTPS 代理：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;proxies&amp;#34;: {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;default&amp;#34;: {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;httpProxy&amp;#34;: &amp;#34;http://proxy.example.com:3128&amp;#34;,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;httpsProxy&amp;#34;: &amp;#34;https://proxy.example.com:3129&amp;#34;,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &amp;#34;noProxy&amp;#34;: &amp;#34;*.test.example.com,.example.org,127.0.0.0/8&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>开启容器代理&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">--env &lt;span class="nv">HTTP_PROXY&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span>&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">HTTPS_PROXY&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span>&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">http_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span>&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">https_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span>&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">NO_PROXY&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;localhost,127.0.0.1,.example.com&amp;#34;&lt;/span>&lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>查看docker网卡地址，运行&lt;code>ifconfig&lt;/code>
+假设得到docker0地址为：172.18.0.1&lt;/p>
+&lt;p>&lt;code>http://proxy.example.com&lt;/code> 填172.18.0.1&lt;/p>
+&lt;h2 id="安装-nvidia-container-toolkit">安装 NVIDIA Container Toolkit
+&lt;/h2>&lt;p>&lt;a class="link" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html" target="_blank" rel="noopener"
+>Installing the NVIDIA Container Toolkit — NVIDIA Container Toolkit&lt;/a>&lt;/p>
+&lt;p>安装完成之后配置docker&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo nvidia-ctk runtime configure --runtime&lt;span class="o">=&lt;/span>docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>重启docker服务&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="下载镜像">下载镜像
+&lt;/h2>&lt;p>去dockerhub搜索
+&lt;a class="link" href="https://hub.docker.com/" target="_blank" rel="noopener"
+>Docker Hub Container Image Library | App Containerization&lt;/a>&lt;/p>
+&lt;p>找到想要的镜像之后进行docker pull，可以直接copy code运行，举个例子&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">docker pull nginx:stable-perl
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="运行镜像">运行镜像
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">docker run --gpus all -itd &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>-p 30000:30000 &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>-p 5006:5006 &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>-v /home/fyq/SAH-Drive:/root/SAH-Drive &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>-v /home/fyq/nuplan:/root/nuplan &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>-v /home/fyq/interplan_workspace:/root/interplan_workspace &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--name nuplan_docker1 &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">http_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">https_proxy&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://172.18.0.1:7897/&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>--env &lt;span class="nv">NO_PROXY&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;localhost,127.0.0.1,.example.com&amp;#34;&lt;/span> &lt;span class="se">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span>sah_nuplan_image:latest /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&amp;ndash;gpus all：将所有 GPU 暴露给容器。也可以指定 GPU 数量或 ID，比如 &amp;ndash;gpus &amp;lsquo;&amp;ldquo;device=0,1&amp;rdquo;&amp;rsquo;&lt;/li>
+&lt;li>-it：交互模式，进入容器&lt;/li>
+&lt;li>-d 让容器在后台运行，保持容器常开&lt;/li>
+&lt;li>nvidia/cuda:12.4.1-runtime-ubuntu22.04：你的镜像名称，比如 my-gpu-image&lt;/li>
+&lt;li>/bin/bash：进入容器 shell（可按需修改为运行的脚本或命令）&lt;/li>
+&lt;li>&amp;ndash;name: 给容器起的名字&lt;/li>
+&lt;li>&amp;ndash;env 环境变量&lt;/li>
+&lt;/ul>
+&lt;p>注意，运行容器的终端需要开启http代理&lt;/p>
+&lt;h2 id="退出-进入-容器">退出 进入 容器
+&lt;/h2>&lt;h3 id="1-退出容器">1. 退出容器
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>如果你在容器内部使用 &lt;code>bash&lt;/code> 或其他 shell，想要退出容器，可以使用以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这会让你退出当前的容器 shell 会话，容器仍然在后台运行（如果是交互模式且没有显式停止容器）。&lt;/p>
+&lt;p>或者，如果你只是想暂时返回主机的命令行，也可以按 &lt;code>Ctrl + P&lt;/code>，然后 &lt;code>Ctrl + Q&lt;/code>，这样容器会在后台继续运行，而你会返回到主机的命令行。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-查看正在运行的容器">2. 查看正在运行的容器
+&lt;/h3>&lt;p>如果你退出了容器，但想再次进入容器，首先需要确认容器是否在运行。可以使用以下命令查看当前正在运行的容器：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker ps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这将显示所有正在运行的容器，包括容器 ID 和名称等信息。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker ps -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这将显示所有的容器，包括没有运行的。&lt;/p>
+&lt;h3 id="3-再次进入容器">3. 再次进入容器
+&lt;/h3>&lt;p>你可以通过容器 ID 或名称再次进入容器。使用以下命令：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker &lt;span class="nb">exec&lt;/span> -it &amp;lt;container_id_or_name&amp;gt; /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="4-进入已停止的容器">4. 进入已停止的容器
+&lt;/h3>&lt;p>如果容器已经停止，你可以先重新启动容器，然后再进入容器：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker start &amp;lt;container_id_or_name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>然后再次使用 &lt;code>docker exec&lt;/code> 进入容器：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker &lt;span class="nb">exec&lt;/span> -it &amp;lt;container_id_or_name&amp;gt; /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="缓存清理">缓存清理
+&lt;/h2>&lt;p>docker清除构建缓存&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">docker builder prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>清理未使用的镜像、容器、卷和网络
+docker system prune&lt;/p>
+&lt;p>这条命令会删除：&lt;/p>
+&lt;ul>
+&lt;li>未运行的容器（停止的容器）&lt;/li>
+&lt;li>悬挂镜像（没有标签的镜像）&lt;/li>
+&lt;li>未使用的网络&lt;/li>
+&lt;li>未使用的卷（可以加 &amp;ndash;volumes 参数来删除未使用的卷）&lt;/li>
+&lt;/ul>
+&lt;p>docker导致的文件夹权限问题
+容器中创建的文件或文件夹的属主是 root 用户，可能导致主机用户（如 fyq）没有权限修改或删除。&lt;/p>
+&lt;p>假设容器运行后你发现主机文件夹 &lt;code>/home/fyq/nuplan/exp/...&lt;/code> 是 root 拥有的。&lt;/p>
+&lt;p>你可以在主机上运行以下命令将属主改回自己：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chown -R fyq:fyq /home/fyq/nuplan/exp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="拷贝文件进入容器">拷贝文件进入容器
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker cp path/host path/container
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>docker cp&lt;/code> 有一个已知限制：它不能递归地覆盖已有的目录结构中的单个文件，尤其是容器内目标路径已经存在且非空的情况下。
+只能先删除容器内的目标目录，再copy。&lt;/p>
+&lt;h2 id="dockerfile常用命令">dockerfile常用命令
+&lt;/h2>&lt;h3 id="1-from指定基础镜像必须的第一行">1. &lt;code>FROM&lt;/code>：指定基础镜像（必须的第一行）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">FROM&lt;/span>&lt;span class="s"> ubuntu:20.04&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2-run在镜像中执行命令用于安装软件等">2. &lt;code>RUN&lt;/code>：在镜像中执行命令（用于安装软件等）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">RUN&lt;/span> apt-get update &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> apt-get install -y python3&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="3-copy将本地文件目录复制到镜像中">3. &lt;code>COPY&lt;/code>：将本地文件/目录复制到镜像中
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">COPY&lt;/span> ./app /usr/src/app&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="4-add类似-copy但支持自动解压-tar-文件及远程下载">4. &lt;code>ADD&lt;/code>：类似 &lt;code>COPY&lt;/code>，但支持自动解压 &lt;code>.tar&lt;/code> 文件及远程下载
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">ADD&lt;/span> https://example.com/file.tar.gz /tmp/&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="5-workdir设置工作目录后续命令会在此目录下执行">5. &lt;code>WORKDIR&lt;/code>：设置工作目录（后续命令会在此目录下执行）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">WORKDIR&lt;/span>&lt;span class="s"> /usr/src/app&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="6-cmd指定容器启动时默认执行的命令只生效一次">6. &lt;code>CMD&lt;/code>：指定容器启动时默认执行的命令（只生效一次）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">CMD&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;python3&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;main.py&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="7-entrypoint指定容器启动命令常用于将容器当作命令运行">7. &lt;code>ENTRYPOINT&lt;/code>：指定容器启动命令（常用于将容器当作命令运行）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">ENTRYPOINT&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;python3&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;main.py&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="8-env设置环境变量">8. &lt;code>ENV&lt;/code>：设置环境变量
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">ENV&lt;/span> &lt;span class="nv">PATH&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;/opt/conda/bin:&lt;/span>&lt;span class="nv">$PATH&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">ENV&lt;/span> LANG C.UTF-8&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="9-expose声明容器监听的端口不自动映射">9. &lt;code>EXPOSE&lt;/code>：声明容器监听的端口（不自动映射）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">EXPOSE&lt;/span>&lt;span class="s"> 8080&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="10-volume声明挂载点用于持久化数据">10. &lt;code>VOLUME&lt;/code>：声明挂载点（用于持久化数据）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">VOLUME&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;/data&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="11-arg构建时传参与-env-区别是生命周期">11. &lt;code>ARG&lt;/code>：构建时传参（与 &lt;code>ENV&lt;/code> 区别是生命周期）
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span class="line">&lt;span class="cl">&lt;span class="k">ARG&lt;/span> &lt;span class="nv">VERSION&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span>.0&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Version is &lt;/span>&lt;span class="nv">$VERSION&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>从dockerfile构建容器&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker build -t your-image-name .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>arxiv注册与投稿注意事项</title><link>https://richie-live.github.io/p/arxiv%E6%B3%A8%E5%86%8C%E4%B8%8E%E6%8A%95%E7%A8%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/arxiv%E6%B3%A8%E5%86%8C%E4%B8%8E%E6%8A%95%E7%A8%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid><description>&lt;p>本文主要记录一下新手小白在arxiv注册与投稿极有可能遇到的两个坑，也是我所遇到的问题。&lt;/p>
+&lt;ol>
+&lt;li>要拿edu邮箱注册，不然需要其他已经在arxiv发过三篇以上文章的人背书，直接用edu邮箱是最简单的，本人就踩了这个坑。&lt;/li>
+&lt;li>用overleaf的要上传latex源码，并且要在overleaf选择texlive2023进行编译通过之后再上传至arxiv进行编译，不然很有可能出错。&lt;/li>
+&lt;/ol></description></item><item><title>扩散模型加入条件的三种方式</title><link>https://richie-live.github.io/p/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B%E5%8A%A0%E5%85%A5%E6%9D%A1%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</link><pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/%E6%89%A9%E6%95%A3%E6%A8%A1%E5%9E%8B%E5%8A%A0%E5%85%A5%E6%9D%A1%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid><description>&lt;p>&lt;a class="link" href="https://zhuanlan.zhihu.com/p/695359814" target="_blank" rel="noopener"
+>扩散模型中三种加入条件的方式&lt;/a>
+&lt;a class="link" href="https://www.zhihu.com/question/609516596" target="_blank" rel="noopener"
+>条件扩散模型是如何保证模型学到条件的&lt;/a>&lt;/p>
+&lt;h2 id="三种加入条件的总结">三种加入条件的总结
+&lt;/h2>&lt;p>扩散模型中三种加入条件的方式&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Vanilla Guidance&lt;/strong>：直接在原本的无条件扩散生成模型的神经网络中，再开一个条件信息进入的入口，然后训练这个神经网络&lt;/li>
+&lt;li>&lt;strong>Classifier Guidance&lt;/strong>：训练一个分类器神经网络，在去噪生成的过程中进行条件引导&lt;/li>
+&lt;li>&lt;strong>Classifier-Free Guidance&lt;/strong>：为了不训练额外的 classifier，classifier-free guidance 融合了 unconditional model 以及 vanilla guidance。它鼓励模型在 guidance 方向抽样，同时偏离 unconditional model 的抽样方向。其公式为：&lt;/li>
+&lt;/ul>
+$$
+\nabla_{x} \log p(x \mid c)=w \nabla_{x} \log p(x \mid c)+(1-w) \nabla_{x} \log p(x)
+$$&lt;p>在扩散模型（Diffusion Models）中，加入条件的方法主要有三种：Vanilla Guidance、Classifier Guidance 和 Classifier-Free Guidance。这些方法通过不同的方式将条件信息引入模型，进而影响生成结果。以下是对这三种方法的详细解释，并附上相关公式。&lt;/p>
+&lt;h3 id="vanilla-guidance传统引导">&lt;strong>Vanilla Guidance（传统引导）&lt;/strong>
+&lt;/h3>&lt;p>Vanilla Guidance 是最基本的一种方法，其中条件信息是通过改变模型的潜在空间来引导生成过程。其基本思想是将条件信息作为模型的输入之一，在每一步的反向扩散过程中，根据条件信息调整生成的分布。&lt;/p>
+&lt;p>&lt;strong>过程：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>假设你有一个条件 $c$，并且模型希望生成与 $c$ 相关的样本。&lt;/li>
+&lt;li>在标准的扩散模型中，我们有一个由噪声逐渐反向扩散生成数据的过程。给定条件 $c$，我们希望模型的生成结果符合该条件。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>公式：&lt;/strong>
+反向扩散的步骤通常使用如下的更新规则：&lt;/p>
+$$\mathbf{x}_{t-1} = \mathbf{x}_t + \Delta \mathbf{x}_t$$&lt;p>其中，$\Delta \mathbf{x}_t$ 是通过条件信息 $c$ 调整的预测噪声。具体地，调整后的噪声预测可以通过以下方式得到：&lt;/p>
+$$\Delta \mathbf{x}_t = f(\mathbf{x}_t, c)$$&lt;p>其中，$f$ 是一个函数，它将当前图像 $\mathbf{x}_t$ 和条件 $c$ 作为输入，并输出一个噪声更新量。这个方法可以通过调整 $f$ 来控制条件对生成结果的影响。&lt;/p>
+&lt;h3 id="classifier-guidance分类器引导">&lt;strong>Classifier Guidance（分类器引导）&lt;/strong>
+&lt;/h3>&lt;p>Classifier Guidance 通过引入一个分类器来帮助模型在反向扩散过程中进行更有针对性的引导。该方法通常使用一个预训练的分类器网络来根据条件 $c$ 调整反向扩散过程中的噪声预测。&lt;/p>
+&lt;p>&lt;strong>过程：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>使用一个额外的分类器网络来计算条件信息与当前生成样本之间的关系。&lt;/li>
+&lt;li>分类器网络 $q(c | \mathbf{x})$ 预测在当前步骤 $\mathbf{x}_t$ 下的条件 $c$，然后通过调整噪声的预测来引导模型生成更符合条件的信息。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>公式：&lt;/strong>
+假设我们有一个生成样本的目标分布 $p_{\theta}(\mathbf{x}_t | c)$，在引导过程中，我们通过分类器提供的梯度来调整反向过程的噪声更新：&lt;/p>
+$$\Delta \mathbf{x}_t = \mathbf{\epsilon}_\theta(\mathbf{x}_t, t) + \lambda \nabla_{\mathbf{x}_t} \log q(c | \mathbf{x}_t)$$&lt;p>其中，$\mathbf{\epsilon}_\theta(\mathbf{x}&lt;em>t, t)$ 是标准的噪声预测，$\lambda$ 是引导的强度超参数，$\nabla&lt;/em>{\mathbf{x}_t} \log q(c | \mathbf{x}_t)$ 是分类器的梯度，用来指导模型生成更符合条件 $c$ 的样本。&lt;/p>
+&lt;h3 id="classifier-free-guidance无分类器引导">&lt;strong>Classifier-Free Guidance（无分类器引导）&lt;/strong>
+&lt;/h3>&lt;p>Classifier-Free Guidance 是一种不依赖于外部分类器的引导方法，通常通过将条件信息直接融入模型的噪声预测中，来实现对生成过程的引导。与分类器引导不同，它不需要一个预训练的分类器，而是将条件信息嵌入到模型的结构中。&lt;/p>
+&lt;p>&lt;strong>过程：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>在每一步的反向扩散过程中，模型通过将条件信息与噪声预测进行结合来实现引导。具体地，模型在预测噪声时，会根据是否提供条件来调整输出。&lt;/li>
+&lt;li>通过条件输入，模型学会在生成过程中自我引导，无需额外的外部分类器。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>公式：&lt;/strong>
+假设模型在反向扩散时的噪声预测是基于条件 $c$ 和无条件输入的组合：&lt;/p>
+$$\Delta \mathbf{x}_t = \mathbf{\epsilon}_\theta(\mathbf{x}_t, c, t) - \mathbf{\epsilon}_\theta(\mathbf{x}_t, \emptyset, t)$$&lt;p>其中：&lt;/p>
+&lt;ul>
+&lt;li>$\mathbf{\epsilon}_\theta(\mathbf{x}_t, c, t)$ 是基于条件 $c$ 的噪声预测；&lt;/li>
+&lt;li>$\mathbf{\epsilon}_\theta(\mathbf{x}_t, \emptyset, t)$ 是无条件的噪声预测（即没有给定条件的预测）。&lt;/li>
+&lt;li>这种方式通过计算有条件和无条件的差异来引导生成过程。&lt;/li>
+&lt;/ul>
+&lt;h3 id="总结">总结
+&lt;/h3>&lt;ul>
+&lt;li>&lt;strong>Vanilla Guidance&lt;/strong> 直接将条件作为输入，影响反向扩散过程的噪声更新。&lt;/li>
+&lt;li>&lt;strong>Classifier Guidance&lt;/strong> 使用一个外部预训练的分类器来提供梯度信息，调整噪声预测。&lt;/li>
+&lt;li>&lt;strong>Classifier-Free Guidance&lt;/strong> 不依赖于外部分类器，而是通过条件和无条件模型的差异来引导生成。&lt;/li>
+&lt;/ul>
+&lt;p>每种方法有不同的优缺点。Vanilla Guidance 实现简单，但可能较难控制生成结果；Classifier Guidance 通过分类器精细调控生成结果，但需要预训练分类器；Classifier-Free Guidance 则去除了对分类器的依赖，减少了外部资源的需求，但可能在某些任务上效果不如分类器引导。&lt;/p></description></item><item><title>Polynomial Attitude Trajectory Planning for Spacecraft with Movable Parts Using Decoupled Strategy</title><link>https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/</link><pubDate>Tue, 14 Nov 2023 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/</guid><description>&lt;img src="https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/featured.png" alt="Featured image of post Polynomial Attitude Trajectory Planning for Spacecraft with Movable Parts Using Decoupled Strategy" />&lt;p>Abstract: The problem of attitude planning for spacecraft with movable parts under complex pointing constraints is addressed in this paper. To avoid tackling the complex pointing constraints in the high-dimensional system, a novel decoupled strategy is proposed to map the pointing space to the attitude space. Path-planning algorithm Rapidly-exploring Random Tree (RRT)*-Smart is employed in pointing space to generate a collision-free pointing path, and piecewise quintic polynomials are used to represent the attitude path. By proving the differential flatness of spacecraft with movable parts, the inverse dynamics is used to acquire attitude state trajectory in state space. Benefiting from the decoupled strategy, the attitude state trajectory is optimized by a new heuristic time allocation algorithm using binary search with no gradient information needed. The simulation results are discussed, and the performance during each scenario is analyzed.&lt;/p>
+&lt;p>&lt;img src="https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/traj.png"
+width="1126"
+height="1764"
+srcset="https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/traj_hu_1ac04782b63cf86a.png 480w, https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/traj_hu_cb0b03bf26fefdc5.png 1024w"
+loading="lazy"
+alt="力矩轨迹"
+class="gallery-image"
+data-flex-grow="63"
+data-flex-basis="153px"
+>
+&lt;img src="https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/path_compare.png"
+width="1436"
+height="1350"
+srcset="https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/path_compare_hu_90cf427c1f641f70.png 480w, https://richie-live.github.io/p/polynomial-attitude-trajectory-planning-for-spacecraft-with-movable-parts-using-decoupled-strategy/path_compare_hu_13645671bec9d03a.png 1024w"
+loading="lazy"
+alt="姿态规划路径比较"
+class="gallery-image"
+data-flex-grow="106"
+data-flex-basis="255px"
+>&lt;/p></description></item><item><title>Time-optimal attitude planning for spacecraft with movable parts using second order cone programming</title><link>https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/</guid><description>&lt;img src="https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/featured.png" alt="Featured image of post Time-optimal attitude planning for spacecraft with movable parts using second order cone programming" />&lt;h2 id="abstract">Abstract
+&lt;/h2>&lt;p>The objective of this paper is to plan a time-optimal attitude trajectory in a relatively short time for spacecraft with movable parts under complex pointing constraints. The constrained attitude planning problem is ﬁrst established, then the constraints on attitude maneuvers are described. The time-optimal attitude planning for rigid spacecraft body is decoupled into geometric level and dynamic level through the addition of the path scalar. To obtain a given safe path in quaternion space, RRT*-Smart path planning and spherical and quadrangle (SQUAD) interpolation are carried out at the geometric level. The timeoptimal parameterization for a given path is reformulated as a second order cone programming (SOCP) problem at the dynamic level through a nonlinear change in variables and the addition of various convexity-preserving extensions. In order to overcome the issue of high system dimension caused by the movable parts, a decoupled attitude planning method is designed to generate the quaternion trajectory of the spacecraft body and the rotation angle trajectory of the movable parts respectively. In comparison to GPOPS, the simulation results demonstrate that the proposed method can plan a suboptimal solution in milliseconds. Furthermore, the performance indicator for energy consumption is better.&lt;/p>
+&lt;h2 id="simulation-results">Simulation Results
+&lt;/h2>&lt;p>&lt;img src="https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/traj.png"
+width="1126"
+height="1764"
+srcset="https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/traj_hu_1ac04782b63cf86a.png 480w, https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/traj_hu_cb0b03bf26fefdc5.png 1024w"
+loading="lazy"
+alt="Alt text"
+class="gallery-image"
+data-flex-grow="63"
+data-flex-basis="153px"
+>
+&lt;img src="https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/path_compare.png"
+width="1436"
+height="1350"
+srcset="https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/path_compare_hu_90cf427c1f641f70.png 480w, https://richie-live.github.io/p/time-optimal-attitude-planning-for-spacecraft-with-movable-parts-using-second-order-cone-programming/path_compare_hu_13645671bec9d03a.png 1024w"
+loading="lazy"
+alt="Alt text"
+class="gallery-image"
+data-flex-grow="106"
+data-flex-basis="255px"
+>&lt;/p></description></item><item><title>旅行图册</title><link>https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/</guid><description>&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/featured.png" alt="Featured image of post 旅行图册" />&lt;h3 id="明月山">明月山
+&lt;/h3>&lt;p>&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/ca32b4240ecbf812de0e597054120c5.jpg"
+width="1255"
+height="1080"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/ca32b4240ecbf812de0e597054120c5_hu_51f92f3a2ffc9311.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/ca32b4240ecbf812de0e597054120c5_hu_62216b9ace0c281c.jpg 1024w"
+loading="lazy"
+alt="山路"
+class="gallery-image"
+data-flex-grow="116"
+data-flex-basis="278px"
+>
+&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/5dd673113d10f396689dfe3fdb67e4e.jpg"
+width="1440"
+height="1080"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/5dd673113d10f396689dfe3fdb67e4e_hu_c54377e74bfa082a.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/5dd673113d10f396689dfe3fdb67e4e_hu_939465a1b001bfde.jpg 1024w"
+loading="lazy"
+alt="雪山"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;h3 id="杭州西湖">杭州西湖
+&lt;/h3>&lt;p>&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/30c522a44c968b231dc074253c782a4.jpg"
+width="1440"
+height="1080"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/30c522a44c968b231dc074253c782a4_hu_5168a0e82b295153.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/30c522a44c968b231dc074253c782a4_hu_1e1a0e6ded63ff5b.jpg 1024w"
+loading="lazy"
+alt="龙井山"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/7a42a022d21b3e28dd7d439bd3dc694.jpg"
+width="1053"
+height="964"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/7a42a022d21b3e28dd7d439bd3dc694_hu_dbda71a84886dc7d.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/7a42a022d21b3e28dd7d439bd3dc694_hu_198d8fefd80e302.jpg 1024w"
+loading="lazy"
+alt="猫"
+class="gallery-image"
+data-flex-grow="109"
+data-flex-basis="262px"
+>
+&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/8993e80f73ce2b6fd42cf8e3cb9fc77.jpg"
+width="1260"
+height="1079"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/8993e80f73ce2b6fd42cf8e3cb9fc77_hu_5e172ae04cbabe4b.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/8993e80f73ce2b6fd42cf8e3cb9fc77_hu_7e7b9db08f526f8f.jpg 1024w"
+loading="lazy"
+alt="寺庙"
+class="gallery-image"
+data-flex-grow="116"
+data-flex-basis="280px"
+>&lt;/p>
+&lt;h3 id="滑雪">滑雪
+&lt;/h3>&lt;p>&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/03d08705ea54a2b6a01c1e47406ce71.jpg"
+width="1080"
+height="1440"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/03d08705ea54a2b6a01c1e47406ce71_hu_40157330d7a7de13.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/03d08705ea54a2b6a01c1e47406ce71_hu_245dca3646747b2a.jpg 1024w"
+loading="lazy"
+alt="滑雪1"
+class="gallery-image"
+data-flex-grow="75"
+data-flex-basis="180px"
+>
+&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/59efe5912af86f105e90d80e7eb8bf4.jpg"
+width="1440"
+height="1080"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/59efe5912af86f105e90d80e7eb8bf4_hu_9e04beefef3f5bf8.jpg 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/59efe5912af86f105e90d80e7eb8bf4_hu_1d8bb799a28b0d90.jpg 1024w"
+loading="lazy"
+alt="滑雪2"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;h3 id="北京野生动物园">北京野生动物园
+&lt;/h3>&lt;p>&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-1.png"
+width="2603"
+height="869"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-1_hu_32fa6395fb90b0be.png 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-1_hu_83b808416877344f.png 1024w"
+loading="lazy"
+alt="水豚"
+class="gallery-image"
+data-flex-grow="299"
+data-flex-basis="718px"
+>
+&lt;img src="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-2.png"
+width="1357"
+height="1700"
+srcset="https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-2_hu_198599678cd92caf.png 480w, https://richie-live.github.io/p/%E6%97%85%E8%A1%8C%E5%9B%BE%E5%86%8C/image-2_hu_bc7bcb8e3e52b444.png 1024w"
+loading="lazy"
+alt="鹿"
+class="gallery-image"
+data-flex-grow="79"
+data-flex-basis="191px"
+>&lt;/p></description></item><item><title>一种引力波探测卫星动态姿态规划方法</title><link>https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/</guid><description>&lt;img src="https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/featured.png" alt="Featured image of post 一种引力波探测卫星动态姿态规划方法" />&lt;h2 id="摘要">摘要
+&lt;/h2>&lt;p>在引力波探测任务中，针对大尺度激光建链时目标姿态动态变化以及姿态机动约束复杂的问题，提出了引力波探测卫星动态姿态规划方法。首先给出引力波探测卫星的最优目标姿态求解方法。然后，设计了随机节点启发式扩展方法和目标姿态实时更新方法，对力矩轨迹进行平滑处理，实现了动态目标姿态规划。仿真结果表明，与经典RRT姿态规划方法相比，本文提出的方法具有更高的指向精度，并且消耗能量少，可满足引力波探测卫星大尺度建链保持的任务需求。&lt;/p>
+&lt;h2 id="仿真结果">仿真结果
+&lt;/h2>&lt;p>使用经典RRT算法和改进RRT算法进行姿态规划，仿真结果如下：&lt;/p>
+&lt;p>&lt;img src="https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/path_compare.png"
+width="1618"
+height="540"
+srcset="https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/path_compare_hu_ba572bb8a7ab4527.png 480w, https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/path_compare_hu_94824eb268c777c9.png 1024w"
+loading="lazy"
+alt="路径对比图"
+class="gallery-image"
+data-flex-grow="299"
+data-flex-basis="719px"
+>
+&lt;img src="https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/u_compare.png"
+width="808"
+height="1246"
+srcset="https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/u_compare_hu_1c719bf019d3246e.png 480w, https://richie-live.github.io/p/%E4%B8%80%E7%A7%8D%E5%BC%95%E5%8A%9B%E6%B3%A2%E6%8E%A2%E6%B5%8B%E5%8D%AB%E6%98%9F%E5%8A%A8%E6%80%81%E5%A7%BF%E6%80%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95/u_compare_hu_277ffd6f40294121.png 1024w"
+loading="lazy"
+alt="力矩对比图"
+class="gallery-image"
+data-flex-grow="64"
+data-flex-basis="155px"
+>&lt;/p></description></item></channel></rss>
