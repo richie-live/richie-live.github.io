@@ -29,7 +29,7 @@ Before diving into the world of intelligent vehicles, I majored in **Aerospace E
 
 I believe that planning is at the heart of intelligence. Whether in autonomous driving or spacecraft control, intelligent systems need to reason beyond perception—**to plan, adapt, and generalize**. My work explores how symbolic planning and LLM-based reasoning can be embedded in real-time decision systems.
 
-我认为**“规划能力”是智能系统的核心能力**。无论是在轨道上运行的航天器，还是穿行于城市道路的自动驾驶车辆，真正可靠的自主系统应具备超越感知的任务理解与动态决策能力。我的研究正是面向这一目标，在**知识建模与神经推理之间寻找融合之道**。
+我认为**规划能力是智能系统的核心能力**。无论是在轨道上运行的航天器，还是穿行于城市道路的自动驾驶车辆，真正可靠的自主系统应具备超越感知的任务理解与动态决策能力。我的研究正是面向这一目标，在**知识建模与神经推理之间寻找融合之道**。
 
 
 
