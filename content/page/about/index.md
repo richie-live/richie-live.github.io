@@ -40,8 +40,6 @@ I believe that planning is at the heart of intelligence. Whether in autonomous d
 * 大语言模型与决策 / LLM-based Decision Systems
 * 航天器姿态规划 / Spacecraft Attitude Planning
 
-
-
 ## 🎓 Education
 
 * **Ph.D. in Autonomous Driving and Traffic Intelligence**
